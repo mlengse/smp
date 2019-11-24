@@ -20,7 +20,7 @@ fs
 .readdirSync(path.join(__dirname, 'models'))
 .filter(file => (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js'))
 .forEach(file => {
-  let model = sequelize.import(path.join(__dirname, 'models' file));
+  let model = sequelize.import(path.join(__dirname, 'models', file));
   db[model.name] = model;
 })
 Object.keys(db).forEach(modelName => {
